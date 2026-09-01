@@ -1726,5 +1726,103 @@ footer .copyright {
         padding:
             9px 13px;
     }
+   /* =========================================
+   JAVASCRIPT GENERATED ELEMENTS
+========================================= */
+
+.search-success {
+    max-width: 1200px;
+    margin: 0 auto 25px;
+    padding: 14px 18px;
+    background: #596b50;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    animation: fadeUp 0.5s ease;
+}
+
+.room-card,
+.feature-card,
+.intro-section,
+.section-heading {
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.room-card:not(.visible),
+.feature-card:not(.visible),
+.intro-section:not(.visible),
+.section-heading:not(.visible) {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.room-card.visible,
+.feature-card.visible,
+.intro-section.visible,
+.section-heading.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.booking-success {
+    text-align: center;
+    padding: 10px;
+}
+
+.success-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #596b50;
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+}
+
+.booking-success h3 {
+    margin-bottom: 10px;
+    color: #25231f;
+    font-size: 24px;
+}
+
+.booking-success p {
+    margin-bottom: 6px;
+    color: #77736c;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+.confirmation-details {
+    margin-top: 20px;
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    background: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+.confirmation-details strong {
+    color: #a47c48;
+}
+
+.confirmation-details span {
+    color: #555149;
+}
 
 }
