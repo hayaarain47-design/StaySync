@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="StaySync - Real-Time Hotel Room Booking System"
+    >
+
+    <title>StaySync | Your Stay, In Sync.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         NAVIGATION
+    ================================== -->
+
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+            Stay<span>Sync</span>
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#rooms">Rooms</a>
+
+            <a href="#experience">Experience</a>
+
+            <a href="#about">About</a>
+
+        </nav>
+
+
+        <button
+            class="my-booking-btn"
+            onclick="openBookingPanel()">
+
+            My Booking
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =================================
+         HERO SECTION
+    ================================== -->
+
+    <main>
+
+
+        <section class="hero" id="home">
+
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-content">
+
+
+                <p class="hero-label">
+                    WELCOME TO STAYSYNC
+                </p>
+
+
+                <h1>
+                    Your Stay,<br>
+                    <span>In Sync.</span>
+                </h1>
+
+
+                <p class="hero-text">
+
+                    Discover beautiful rooms, compare prices,
+                    and reserve your perfect stay with ease.
+
+                </p>
+
+
+                <a
+                    href="#rooms"
+                    class="hero-button">
+
+                    Explore Rooms
+
+                </a>
+
+
+            </div>
+
+
+            <div class="hero-bottom">
+
+                <span>
+                    Scroll to discover
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             SEARCH / BOOKING BAR
+        ================================== -->
+
+        <section class="search-section">
+
+
+            <div class="search-card">
+
+
+                <div class="search-field">
+
+                    <label for="check-in">
+                        CHECK-IN
+                    </label>
+
+                    <input
+                        type="date"
+                        id="check-in"
+                    >
+
+                </div>
+
+
+
+                <div class="search-divider"></div>
+
+
+
+                <div class="search-field">
+
+                    <label for="check-out">
+                        CHECK-OUT
+                    </label>
+
+                    <input
+                        type="date"
+                        id="check-out"
+                    >
+
+                </div>
+
+
+
+                <div class="search-divider"></div>
+
+
+
+                <div class="search-field">
+
+                    <label for="guests">
+                        GUESTS
+                    </label>
+
+                    <select id="guests">
+
+                        <option value="1">
+                            1 Guest
+                        </option>
+
+                        <option value="2" selected>
+                            2 Guests
+                        </option>
+
+                        <option value="3">
+                            3 Guests
+                        </option>
+
+                        <option value="4">
+                            4 Guests
+                        </option>
+
+                        <option value="5">
+                            5 Guests
+                        </option>
+
+                        <option value="6">
+                            6 Guests
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <button
+                    class="search-button"
+                    onclick="searchRooms()">
+
+                    Search Rooms
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             INTRODUCTION
+        ================================== -->
+
+        <section class="intro-section">
+
+
+            <div class="intro-label">
+                STAY YOUR WAY
+            </div>
+
+
+            <h2>
+                Find a room that feels<br>
+                <span>like it was made for you.</span>
+            </h2>
+
+
+            <p>
+
+                From comfortable stays to luxurious suites,
+                StaySync makes it simple to find the right
+                room at the right price.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             ROOMS SECTION
+        ================================== -->
+
+        <section
+            class="rooms-section"
+            id="rooms">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <p>
+                        OUR ROOMS
+                    </p>
+
+                    <h2>
+                        Stay Somewhere Special
+                    </h2>
+
+                </div>
+
+
+                <div class="room-count">
+
+                    <strong id="available-count">
+                        6
+                    </strong>
+
+                    <span>
+                        rooms available
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 FILTERS
+            ================================== -->
+
+            <div class="filters">
+
+
+                <div class="filter-group">
+
+                    <label for="room-type">
+                        Room Type
+                    </label>
+
+                    <select id="room-type">
+
+                        <option value="all">
+                            All Rooms
+                        </option>
+
+                        <option value="single">
+                            Single Room
+                        </option>
+
+                        <option value="double">
+                            Double Room
+                        </option>
+
+                        <option value="suite">
+                            Suite
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label for="price-filter">
+                        Maximum Price
+                    </label>
+
+                    <select id="price-filter">
+
+                        <option value="all">
+                            Any Price
+                        </option>
+
+                        <option value="15000">
+                            Up to Rs. 15,000
+                        </option>
+
+                        <option value="25000">
+                            Up to Rs. 25,000
+                        </option>
+
+                        <option value="35000">
+                            Up to Rs. 35,000
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 ROOM CARDS
+            ================================== -->
+
+            <div class="rooms-grid">
+
+
+
+                <!-- ROOM 1 -->
+
+                <article
+                    class="room-card"
+                    data-type="single"
+                    data-price="12000">
+
+
+                    <div class="room-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85"
+                            alt="Elegant single hotel room"
+                            loading="lazy"
+                        >
+
+
+                        <span class="room-badge available">
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <div class="room-details">
+
+
+                        <span class="room-category">
+                            SINGLE ROOM
+                        </span>
+
+
+                        <h3>
+                            Comfort Single
+                        </h3>
+
+
+                        <p>
+                            A peaceful private room designed
+                            for comfortable short stays.
+                        </p>
+
+
+                        <div class="room-features">
+
+                            <span>
+                                1 Guest
+                            </span>
+
+                            <span>
+                                King Bed
+                            </span>
+
+                            <span>
+                                Wi-Fi
+                            </span>
+
+                        </div>
+
+
+                        <div class="room-footer">
+
+                            <div>
+
+                                <strong>
+                                    Rs. 12,000
+                                </strong>
+
+                                <small>
+                                    / night
+                                </small>
+
+                            </div>
+
+
+                            <button
+                                class="reserve-btn"
+                                onclick="reserveRoom(
+                                    'Comfort Single',
+                                    12000
+                                )">
+
+                                Reserve
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- ROOM 2 -->
+
+                <article
+                    class="room-card"
+                    data-type="double"
+                    data-price="18000">
+
+
+                    <div class="room-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=85"
+                            alt="Modern double hotel room"
+                            loading="lazy"
+                        >
+
+
+                        <span class="room-badge available">
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <div class="room-details">
+
+
+                        <span class="room-category">
+                            DOUBLE ROOM
+                        </span>
+
+
+                        <h3>
+                            Urban Double
+                        </h3>
+
+
+                        <p>
+                            Modern interiors with everything
+                            you need for a relaxing stay.
+                        </p>
+
+
+                        <div class="room-features">
+
+                            <span>
+                                2 Guests
+                            </span>
+
+                            <span>
+                                Queen Bed
+                            </span>
+
+                            <span>
+                                Wi-Fi
+                            </span>
+
+                        </div>
+
+
+                        <div class="room-footer">
+
+                            <div>
+
+                                <strong>
+                                    Rs. 18,000
+                                </strong>
+
+                                <small>
+                                    / night
+                                </small>
+
+                            </div>
+
+
+                            <button
+                                class="reserve-btn"
+                                onclick="reserveRoom(
+                                    'Urban Double',
+                                    18000
+                                )">
+
+                                Reserve
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- ROOM 3 -->
+
+                <article
+                    class="room-card"
+                    data-type="suite"
+                    data-price="32000">
+
+
+                    <div class="room-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85"
+                            alt="Luxury hotel suite"
+                            loading="lazy"
+                        >
+
+
+                        <span class="room-badge available">
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <div class="room-details">
+
+
+                        <span class="room-category">
+                            LUXURY SUITE
+                        </span>
+
+
+                        <h3>
+                            Signature Suite
+                        </h3>
+
+
+                        <p>
+                            Spacious luxury with a separate
+                            sitting area and premium comfort.
+                        </p>
+
+
+                        <div class="room-features">
+
+                            <span>
+                                4 Guests
+                            </span>
+
+                            <span>
+                                King Bed
+                            </span>
+
+                            <span>
+                                Lounge
+                            </span>
+
+                        </div>
+
+
+                        <div class="room-footer">
+
+                            <div>
+
+                                <strong>
+                                    Rs. 32,000
+                                </strong>
+
+                                <small>
+                                    / night
+                                </small>
+
+                            </div>
+
+
+                            <button
+                                class="reserve-btn"
+                                onclick="reserveRoom(
+                                    'Signature Suite',
+                                    32000
+                                )">
+
+                                Reserve
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- ROOM 4 -->
+
+                <article
+                    class="room-card"
+                    data-type="double"
+                    data-price="22000">
+
+
+                    <div class="room-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1000&q=85"
+                            alt="Premium double hotel room"
+                            loading="lazy"
+                        >
+
+
+                        <span class="room-badge available">
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <div class="room-details">
+
+
+                        <span class="room-category">
+                            DOUBLE ROOM
+                        </span>
+
+
+                        <h3>
+                            Garden View
+                        </h3>
+
+
+                        <p>
+                            Wake up to a beautiful view with
+                            a calm and welcoming atmosphere.
+                        </p>
+
+
+                        <div class="room-features">
+
+                            <span>
+                                2 Guests
+                            </span>
+
+                            <span>
+                                King Bed
+                            </span>
+
+                            <span>
+                                Garden View
+                            </span>
+
+                        </div>
+
+
+                        <div class="room-footer">
+
+                            <div>
+
+                                <strong>
+                                    Rs. 22,000
+                                </strong>
+
+                                <small>
+                                    / night
+                                </small>
+
+                            </div>
+
+
+                            <button
+                                class="reserve-btn"
+                                onclick="reserveRoom(
+                                    'Garden View',
+                                    22000
+                                )">
+
+                                Reserve
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- ROOM 5 -->
+
+                <article
+                    class="room-card"
+                    data-type="suite"
+                    data-price="35000">
+
+
+                    <div class="room-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+                            alt="Premium luxury hotel suite"
+                            loading="lazy"
+                        >
+
+
+                        <span class="room-badge available">
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <div class="room-details">
+
+
+                        <span class="room-category">
+                            PREMIUM SUITE
+                        </span>
+
+
+                        <h3>
+                            Royal Retreat
+                        </h3>
+
+
+                        <p>
+                            An elegant suite with premium
+                            furnishings and spacious interiors.
+                        </p>
+
+
+                        <div class="room-features">
+
+                            <span>
+                                4 Guests
+                            </span>
+
+                            <span>
+                                King Bed
+                            </span>
+
+                            <span>
+                                Living Area
+                            </span>
+
+                        </div>
+
+
+                        <div class="room-footer">
+
+                            <div>
+
+                                <strong>
+                                    Rs. 35,000
+                                </strong>
+
+                                <small>
+                                    / night
+                                </small>
+
+                            </div>
+
+
+                            <button
+                                class="reserve-btn"
+                                onclick="reserveRoom(
+                                    'Royal Retreat',
+                                    35000
+                                )">
+
+                                Reserve
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- ROOM 6 -->
+
+                <article
+                    class="room-card"
+                    data-type="single"
+                    data-price="14000">
+
+
+                    <div class="room-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1000&q=85"
+                            alt="Cozy single hotel room"
+                            loading="lazy"
+                        >
+
+
+                        <span class="room-badge limited">
+                            1 Left
+                        </span>
+
+                    </div>
+
+
+                    <div class="room-details">
+
+
+                        <span class="room-category">
+                            SINGLE ROOM
+                        </span>
+
+
+                        <h3>
+                            Cozy Haven
+                        </h3>
+
+
+                        <p>
+                            A warm and stylish room perfect
+                            for solo travelers.
+                        </p>
+
+
+                        <div class="room-features">
+
+                            <span>
+                                1 Guest
+                            </span>
+
+                            <span>
+                                Queen Bed
+                            </span>
+
+                            <span>
+                                Wi-Fi
+                            </span>
+
+                        </div>
+
+
+                        <div class="room-footer">
+
+                            <div>
+
+                                <strong>
+                                    Rs. 14,000
+                                </strong>
+
+                                <small>
+                                    / night
+                                </small>
+
+                            </div>
+
+
+                            <button
+                                class="reserve-btn"
+                                onclick="reserveRoom(
+                                    'Cozy Haven',
+                                    14000
+                                )">
+
+                                Reserve
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+            <p
+                class="no-results"
+                id="no-results">
+
+                No rooms match your selected filters.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             EXPERIENCE
+        ================================== -->
+
+        <section
+            class="experience-section"
+            id="experience">
+
+
+            <div class="experience-overlay"></div>
+
+
+            <div class="experience-content">
+
+
+                <p>
+                    MORE THAN A ROOM
+                </p>
+
+
+                <h2>
+                    Make your stay<br>
+                    <span>worth remembering.</span>
+                </h2>
+
+
+                <p>
+
+                    Thoughtful spaces, comfortable beds,
+                    beautiful surroundings and a booking
+                    experience designed around you.
+
+                </p>
+
+
+                <a
+                    href="#rooms"
+                    class="experience-button">
+
+                    Find Your Stay
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             FEATURES
+        ================================== -->
+
+        <section class="features-section">
+
+
+            <div class="section-heading centered">
+
+
+                <p>
+                    WHY STAYSYNC
+                </p>
+
+
+                <h2>
+                    Booking Made Simple
+                </h2>
+
+
+            </div>
+
+
+
+            <div class="features-grid">
+
+
+                <div class="feature-card">
+
+                    <div class="feature-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Real-Time Availability
+                    </h3>
+
+                    <p>
+                        See room availability and keep
+                        bookings synchronized across users.
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Easy Comparison
+                    </h3>
+
+                    <p>
+                        Compare room types, prices and
+                        features before choosing your stay.
+                    </p>
+
+                </div>
+
+
+
+                <div class="feature-card">
+
+                    <div class="feature-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Simple Reservation
+                    </h3>
+
+                    <p>
+                        Select your room and reserve your
+                        stay through a clean booking flow.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             ABOUT
+        ================================== -->
+
+        <section
+            class="about-section"
+            id="about">
+
+
+            <div class="about-content">
+
+
+                <p class="section-label">
+                    ABOUT STAYSYNC
+                </p>
+
+
+                <h2>
+                    Your next stay starts here.
+                </h2>
+
+
+                <p>
+
+                    StaySync is designed to make hotel booking
+                    clearer, faster and more connected. Browse
+                    available rooms, find the right price and
+                    reserve your stay from one simple platform.
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================
+         BOOKING PANEL
+    ================================== -->
+
+    <div
+        class="booking-modal"
+        id="booking-modal">
+
+
+        <div class="booking-panel">
+
+
+            <button
+                class="close-modal"
+                onclick="closeBookingPanel()">
+
+                ×
+
+            </button>
+
+
+            <p class="panel-label">
+                STAYSYNC RESERVATION
+            </p>
+
+
+            <h2>
+                Complete Your Booking
+            </h2>
+
+
+            <div
+                id="selected-room"
+                class="selected-room">
+
+                No room selected yet.
+
+            </div>
+
+
+            <div class="booking-form">
+
+
+                <div class="form-group">
+
+                    <label for="guest-name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="guest-name"
+                        placeholder="Enter your name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="guest-email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="guest-email"
+                        placeholder="Enter your email"
+                    >
+
+                </div>
+
+
+                <button
+                    class="confirm-button"
+                    onclick="confirmBooking()">
+
+                    Confirm Reservation
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+
+        <div class="footer-brand">
+            Stay<span>Sync</span>
+        </div>
+
+
+        <p>
+            Your Stay, In Sync.
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#rooms">
+                Rooms
+            </a>
+
+            <a href="#experience">
+                Experience
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+        </div>
+
+
+        <p class="copyright">
+            © 2026 StaySync. All rights reserved.
+        </p>
+
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
